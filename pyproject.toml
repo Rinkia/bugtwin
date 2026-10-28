@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bugtwin"
+version = "0.1.0.dev0"
+description = "Find the unfixed siblings of the bug you just fixed: derives a pattern from your fix diff and hunts the same mistake across your repos. Deterministic, stdlib-only, with a Claude Code Stop hook."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Stefano Rizzello", email = "rizzellostefano@gmail.com" }]
+keywords = ["static-analysis", "variant-analysis", "bug-finding", "ast", "claude-code", "coding-agent"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+bugtwin = "bugtwin.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Rinkia/bugtwin"
+Repository = "https://github.com/Rinkia/bugtwin"
+Issues = "https://github.com/Rinkia/bugtwin/issues"
+
+[tool.setuptools]
+packages = ["bugtwin"]
